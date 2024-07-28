@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <title>Agencia de Viajes</title>
+</head>
+<body>
+    <header>
+        <button id="special-offer-button">Ver Ofertas Especiales</button>
+        <img src="https://w0.peakpx.com/wallpaper/813/578/HD-wallpaper-passenger-plane-in-clouds-view-from-far-away-planes-graphy-clouds-nature.jpg" alt="Airplane Banner" class="banner">
+        <h1>Bienvenidos a nuestra Agencia de Viajes</h1>
+        <p>Usa nuestro buscador para encontrar los mejores vuelos y paquetes turísticos.</p>
+        <div class="search-info">
+            <p>Si aún no decides dónde o cuándo viajar, presiona Buscar y podrás ver nuestros mejores paquetes de viaje :-)</p>
+        </div>
+        <div class="search-container">
+            <input type="text" id="destination" placeholder="Destino">
+            <input type="date" id="travel-date">
+            <button onclick="search()">Buscar</button>
+        </div>
+    </header>
+    <div id="notification-container"></div>
+    <div id="filter-container">
+
+        <form action="filterTrips.php" method="POST">
+            <input type="text" name="hotelName" placeholder="Nombre del hotel">
+            <input type="text" name="city" placeholder="Ciudad">
+            <input type="text" name="country" placeholder="País">
+            <input type="date" name="travelDate" placeholder="Fecha de viaje">
+            <input type="number" name="duration" placeholder="Duración del viaje (días)">
+            <button type="submit">Filtrar Viajes</button>
+        </form>
+    </div>
+
+    <div id="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form action="login.php" method="POST">
+            <input type="text" name="username" placeholder="Nombre de usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+    
+    <div id="register-container">
+        <h2>Registrarse</h2>
+        <form action="register.php" method="POST">
+            <input type="text" name="username" placeholder="Nombre de usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+    <div id="results-container"></div>
+    <script src="script.js"></script>
+
+    <h2>Agregar Vuelo</h2>
+    <form action="add_flight.php" method="post">
+        <input type="text" name="origen" placeholder="Origen" required>
+        <input type="text" name="destino" placeholder="Destino" required>
+        <input type="date" name="fecha" required>
+        <input type="number" name="plazas_disponibles" placeholder="Plazas Disponibles" required>
+        <input type="number" step="0.01" name="precio" placeholder="Precio" required>
+        <button type="submit">Agregar Vuelo</button>
+    </form>
+
+    <h2>Agregar Hotel</h2>
+    <form action="add_hotel.php" method="post">
+        <input type="text" name="nombre" placeholder="Nombre del Hotel" required>
+        <input type="text" name="ubicacion" placeholder="Ubicación" required>
+        <input type="number" name="habitaciones_disponibles" placeholder="Habitaciones Disponibles" required>
+        <input type="number" step="0.01" name="tarifa_noche" placeholder="Tarifa por Noche" required>
+        <button type="submit">Agregar Hotel</button>
+    </form>
+    <h2>Consultar Hoteles con más de dos Reservas</h2>
+    <form action="hotels_with_reservations.php" method="get">
+    <button type="submit">Mostrar Hoteles</button>
+</form>
+</body>
+</html>
+
+
